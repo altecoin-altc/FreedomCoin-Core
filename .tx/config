@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[freedomcoin-project-translations.qt-translation-53x]
+file_filter = src/qt/locale/freedomcoin_<lang>.ts
+source_file = src/qt/locale/freedomcoin_en.ts
+source_lang = en
