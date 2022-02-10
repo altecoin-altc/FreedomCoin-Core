@@ -6,13 +6,13 @@ Freedom is a PoS/MN chain based off of PIVX.
 # Community Project
 Discord: https://discord.gg/KkK5Pdg
 
-Telegram: https://t.me/TrumpCoinWorldWide
+Telegram: https://t.me/FreedomcoinWorldWide
 
-Twitter: https://twitter.com/trumpcoinww
+Twitter: https://twitter.com/FreedomcoinWW
 
 WehubSpace: https://wehubspace.com/pages/Freedomcoin/
 
-Website: https:/trumpcoin.com/
+Website: https://freedomcoin.global/
 
 BitcoinTalk: https://bitcointalk.org/index.php?topic=1858645
 
