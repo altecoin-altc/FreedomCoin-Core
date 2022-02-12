@@ -640,7 +640,12 @@ int TransactionRecord::getOutputIndex() const
 
 bool TransactionRecord::isCoinStake() const
 {
-    return (type == TransactionRecord::StakeMint || type == TransactionRecord::Generated || type == TransactionRecord::StakeZFREED);
+    return type == TransactionRecord::StakeMint || type == TransactionRecord::Generated || type == TransactionRecord::StakeZFREED;
+}
+
+bool TransactionRecord::isPNReward() const
+{
+    return type == TransactionRecord::PNReward;
 }
 
 bool TransactionRecord::isAnyColdStakingType() const
