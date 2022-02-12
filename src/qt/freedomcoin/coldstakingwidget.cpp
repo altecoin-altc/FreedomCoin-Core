@@ -228,7 +228,7 @@ void ColdStakingWidget::loadWalletModel()
 
 }
 
-void ColdStakingWidget::onTxArrived(const QString& hash, const bool isCoinStake, const bool isCSAnyType)
+void ColdStakingWidget::onTxArrived(const QString& hash, const bool isCoinStake, const bool isPNReward, const bool isCSAnyType)
 {
     if (isCSAnyType) {
         tryRefreshDelegations();
