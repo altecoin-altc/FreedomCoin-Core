@@ -53,9 +53,9 @@ DashboardWidget::DashboardWidget(FreedomCoinGUI* parent) :
     // Staking Information
     setCssSubtitleScreen(ui->labelMessage);
     setCssProperty(ui->labelSquarePiv, "square-chart-piv");
-    setCssProperty(ui->labelSquareMN, "square-chart-pn");
+    setCssProperty(ui->labelSquarePN, "square-chart-pn");
     setCssProperty(ui->labelPiv, "text-chart-piv");
-    setCssProperty(ui->labelMN, "text-chart-pn");
+    setCssProperty(ui->labelPN, "text-chart-pn");
 
     // Staking Amount
     QFont fontBold;
@@ -63,7 +63,7 @@ DashboardWidget::DashboardWidget(FreedomCoinGUI* parent) :
 
     setCssProperty(ui->labelChart, "legend-chart");
     setCssProperty(ui->labelAmountPiv, "text-stake-piv-disable");
-    setCssProperty(ui->labelAmountMN, "text-stake-pn-disable");
+    setCssProperty(ui->labelAmountPN, "text-stake-pn-disable");
 
     setCssProperty({ui->pushButtonAll,  ui->pushButtonMonth, ui->pushButtonYear}, "btn-check-time");
     setCssProperty({ui->comboBoxMonths,  ui->comboBoxYears}, "btn-combo-chart-selected");
@@ -684,14 +684,14 @@ void DashboardWidget::onChartRefreshed()
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
     if (chartData->totalPiv > 0 || chartData->totalPN > 0) {
         setCssProperty(ui->labelAmountPiv, "text-stake-piv");
-        setCssProperty(ui->labelAmountPN, "text-stake-Pn");
+        setCssProperty(ui->labelAmountPN, "text-stake-pn");
     } else {
         setCssProperty(ui->labelAmountPiv, "text-stake-piv-disable");
-        setCssProperty(ui->labelAmountPN, "text-stake-Pn-disable");
+        setCssProperty(ui->labelAmountPN, "text-stake-pn-disable");
     }
     forceUpdateStyle({ui->labelAmountPiv, ui->labelAmountPN});
     ui->labelAmountPiv->setText(GUIUtil::formatBalance(chartData->totalPiv, nDisplayUnit));
-    ui->labelAmountMN->setText(GUIUtil::formatBalance(chartData->totalPN, nDisplayUnit));
+    ui->labelAmountPN->setText(GUIUtil::formatBalance(chartData->totalPN, nDisplayUnit));
 
     series->append(set0);
     if (hasPNRewards)
