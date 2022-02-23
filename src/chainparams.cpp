@@ -86,7 +86,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints = {
     {  1252764, uint256S("e8318d68c94a7476993673966520ae7ae0b84d65a10a3e23b882f45194723757")},
     {  1260000, uint256S("95e4bea99cd0c55b70f2900c6907241e5e2010c641bde7724efbc942009f418f")},
     {  1300000, uint256S("1d5c18323f943171486891f0f7067de990ef9babaf639a0d7564067408b4cecf")},
-    {  1348050, uint256S("bd4d569ffabb8b79dc50b053bbda27f82aa8720d1a73ab87158fc20f4b193d28")}
+    {  1348050, uint256S("bd4d569ffabb8b79dc50b053bbda27f82aa8720d1a73ab87158fc20f4b193d28")},
+    {  1381265, uint256S("93231a201fd73d430ff64a281e425b4d116ba4aa0aa3227f593b4a5992452f61")}
     };
 
 static const Checkpoints::CCheckpointData data = {
@@ -229,7 +230,7 @@ public:
         vSeeds.emplace_back("seed4.freedomcoin.global", true);
         vSeeds.emplace_back("seed5.freedomcoin.global", true);
         vSeeds.emplace_back("seed6.freedomcoin.global", true);
-        
+        vSeeds.emplace_back("96.82.200.49", true);        
         
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 66);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 29);
