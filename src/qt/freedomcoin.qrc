@@ -182,7 +182,7 @@
         <file alias="img-empty-staking-off">freedomcoin/res/img/img-empty-staking-off.svg</file>
         <file alias="img-empty-staking-on">freedomcoin/res/img/img-empty-staking-on.svg</file>
         <file alias="img-empty-transactions">freedomcoin/res/img/img-empty-transactions.svg</file>
-        <file alias="img-nav-logo">freedomcoin/res/img/img-nav-logo.svg</file>
+        <file alias="img-nav-logo">freedomcoin/res/img/img-nav-logo.png</file>
         <file alias="img-qr">freedomcoin/res/img/img-qr.svg</file>
         <file alias="ic-contact-arrow-down">freedomcoin/res/img/ic-contact-arrow-down.svg</file>
         <file alias="ic-contact-arrow-down-white">freedomcoin/res/img/ic-contact-arrow-down-white.svg</file>
