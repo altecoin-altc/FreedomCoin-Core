@@ -78,8 +78,8 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 
-const char * const FreedomCoin_CONF_FILENAME = "freedomcoin.conf";
-const char * const FreedomCoin_PID_FILENAME = "freedomcoin.pid";
+const char * const FreedomCoin_CONF_FILENAME = "trumpcoin.conf";
+const char * const FreedomCoin_PID_FILENAME = "trumpcoin.pid";
 const char * const FreedomCoin_PATRIOTNODE_CONF_FILENAME = "patriotnode.conf";
 
 
@@ -544,7 +544,7 @@ fs::path GetDefaultDataDir()
 // Unix: ~/.freedomcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "FreedomCoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "TrumpCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -556,10 +556,10 @@ fs::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectories(pathRet);
-    return pathRet / "FreedomCoin";
+    return pathRet / "TrumpCoin";
 #else
     // Unix
-    return pathRet / ".freedomcoin";
+    return pathRet / ".trumpcoin";
 #endif
 #endif
 }
