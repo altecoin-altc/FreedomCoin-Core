@@ -230,7 +230,8 @@ public:
         vSeeds.emplace_back("seed4.freedomcoin.global", true);
         vSeeds.emplace_back("seed5.freedomcoin.global", true);
         vSeeds.emplace_back("seed6.freedomcoin.global", true);
-        vSeeds.emplace_back("96.82.200.49", true);        
+        vSeeds.emplace_back("96.82.200.49", true);
+        vSeeds.emplace_back("50.124.219.225", true);
         
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 66);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 29);
