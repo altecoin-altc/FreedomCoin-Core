@@ -862,11 +862,19 @@ CAmount GetBlockValue(int nHeight)
                 nBlockValue = 8 * COIN;
       } else if (nHeight > 1200000 && nHeight <= 1300000) {
                 nBlockValue = 7 * COIN;
-      } else if (nHeight > 1300000 && nHeight <= 2200000) {
+      } else if (nHeight > 1300000 && nHeight < Params().GetConsensus().nBadBlockHeight) {
                 nBlockValue = 3 * COIN;                                                   
+      } else if (nHeight == Params().GetConsensus().nBadBlockHeight) {
+                nBlockValue = 1 * COIN;
+      } else if (nHeight >= 1707030 && nHeight <= 2200000) {
+                nBlockValue = 3 * COIN;
       } else {
-          nBlockValue = 1 * COIN;
-	}
+                nBlockValue = 1 * COIN;
+      }
+    CAmount nMoneySupply = MoneySupply.Get();
+    if (nMoneySupply + nBlockValue >= Params().GetConsensus().nMaxMoneyOut) {
+        nBlockValue = 0;
+    }
 
     return nBlockValue;
 }
@@ -1679,6 +1687,12 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     //Check that the block does not overmint
     CAmount nBudgetAmt = 0;     // If this is a superblock, amount to be paid to the winning proposal, otherwise 0
     if (!IsBlockValueValid(pindex->nHeight, nExpectedMint, nMint, nBudgetAmt)) {
+        return state.DoS(100, error("%s: reward pays too much (actual=%s vs limit=%s)",
+                                    __func__, FormatMoney(nMint), FormatMoney(nExpectedMint)),
+                         REJECT_INVALID, "bad-blk-amount");
+    }
+
+    if(pindex->nHeight == Params().GetConsensus().nBadBlockHeight && (nMint > nExpectedMint)) {
         return state.DoS(100, error("%s: reward pays too much (actual=%s vs limit=%s)",
                                     __func__, FormatMoney(nMint), FormatMoney(nExpectedMint)),
                          REJECT_INVALID, "bad-blk-amount");

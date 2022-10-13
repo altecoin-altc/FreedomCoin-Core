@@ -149,12 +149,13 @@ public:
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 6;
+        consensus.nBadBlockHeight = 1707029;
         
         // nTreasuryAddr = "TwubRX2kqr89gnS6ZAtsyC7UMq6Wj5HuVa";
 
         // spork keys
-        consensus.strSporkPubKey = "042ef32692314925d12cf00409f8aff860eed15257a1b9c4e5dbdaf9f92175808fda470c7796716104cd23e2ef89cccd4f072ee895d9fcef3dae41a6514fc3d921";
-        consensus.strSporkPubKeyOld = "042ef32692314925d12cf00409f8aff860eed15257a1b9c4e5dbdaf9f92175808fda470c7796716104cd23e2ef89cccd4f072ee895d9fcef3dae41a6514fc3d921";
+        consensus.strSporkPubKey = "046fe14f9664413c93052f72b4a9c7365c39dd4de83b077a6d88da393f6e88c1331db47d0b44208734bfaa7c5e18f5366bed48bdbacda4d041eb82016cfeb857c9";
+        consensus.strSporkPubKeyOld = "046fe14f9664413c93052f72b4a9c7365c39dd4de83b077a6d88da393f6e88c1331db47d0b44208734bfaa7c5e18f5366bed48bdbacda4d041eb82016cfeb857c9";
         consensus.nTime_EnforceNewSporkKey = 1608512400;    //!> December 21, 2020 01:00:00 AM GMT
         consensus.nTime_RejectOldSporkKey = 1614560400;     //!> March 1, 2021 01:00:00 AM GMT
 
