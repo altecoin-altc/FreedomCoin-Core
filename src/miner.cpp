@@ -145,7 +145,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             // update fStakeableCoins
             CheckForCoins(pwallet, &availableCoins);
 
-            while ((g_connman && g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) < 728 && Params().MiningRequiresPeers())
+            while ((g_connman && g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0 && Params().MiningRequiresPeers())
                     || pwallet->IsLocked() || !fStakeableCoins || !fMasternodeSync) {
                 MilliSleep(5000);
                 // Do another check here to ensure fStakeableCoins and fMasternodeSync is updated
@@ -170,10 +170,10 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             CheckForCoins(pwallet, &availableCoins);
 
             while ((g_connman && g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0 && Params().MiningRequiresPeers())
-                    || pwallet->IsLocked() || !fStakeableCoins || patriotnodeSync.NotCompleted()) {
+                    || pwallet->IsLocked() || !fStakeableCoins || !fMasternodeSync) {
                 MilliSleep(5000);
-                // Do another check here to ensure fStakeableCoins is updated
-                if (!fStakeableCoins) CheckForCoins(pwallet, &availableCoins);
+                // Do another check here to ensure fStakeableCoins and fMasternodeSync is updated
+                if (!fStakeableCoins || !fMasternodeSync) CheckForCoins(pwallet, &availableCoins);
             }
 
             //search our map of hashed blocks, see if bestblock has been hashed yet
