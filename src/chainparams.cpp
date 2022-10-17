@@ -136,14 +136,14 @@ public:
         consensus.posLimitV2 = uint256S("0x000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nBudgetCycleBlocks = 43200;       // approx. 1 every 30 days
         consensus.nBudgetFeeConfirmations = 6;      // Number of confirmations for the finalization fee
-        consensus.nCoinbaseMaturity = 30;
+        consensus.nCoinbaseMaturity = 90;
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 18000000 * COIN;
         consensus.nPNCollateralAmt = 5000 * COIN;
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 8 * 60 * 60;
-        consensus.nStakeMinDepth = 500;
+        consensus.nStakeMinDepth = 600;
         consensus.nTargetTimespan = 40 * 60;
         consensus.nTargetTimespanV2 = 40 * 60;
         consensus.nTargetSpacing = 1 * 60;
