@@ -1686,7 +1686,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
 
     //Check that the block does not overmint
     CAmount nBudgetAmt = 0;     // If this is a superblock, amount to be paid to the winning proposal, otherwise 0
-    if (!IsBlockValueValid(pindex->nHeight, nExpectedMint, nMint, nBudgetAmt)) {
+    if (!IsBlockValueValid(pindex->nHeight, nExpectedMint, nMint, nBudgetAmt) && pindex->nHeight > Params().GetConsensus().nBadBlockHeight) {
         return state.DoS(100, error("%s: reward pays too much (actual=%s vs limit=%s)",
                                     __func__, FormatMoney(nMint), FormatMoney(nExpectedMint)),
                          REJECT_INVALID, "bad-blk-amount");
