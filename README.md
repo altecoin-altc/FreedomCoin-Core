@@ -22,4 +22,4 @@ Reddit: https://www.reddit.com/r/trumpcoin/
 # Block Explorer
 Explorer 1: https://chainz.cryptoid.info/freed/#
 
-Explorer 2: http://chain.trumpcoin.com/
+Explorer 2: https://chain.freedomcoin.global
