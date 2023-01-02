@@ -170,6 +170,7 @@ public:
 
     /// Get the time a patriotnode was last paid
     int64_t GetLastPaid(const PatriotnodeRef& mn, const CBlockIndex* BlockReading) const;
+    int64_t GetLastPaidBlock(const PatriotnodeRef& mn, const CBlockIndex* BlockReading) const;
     int64_t SecondsSincePayment(const PatriotnodeRef& mn, const CBlockIndex* BlockReading) const;
 
     // Block hashes cycling vector management
