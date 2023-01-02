@@ -1107,7 +1107,7 @@ UniValue getcollateral(const JSONRPCRequest& request)
             "\nExamples:\n" +
             HelpExampleCli("getcollateral", "") + HelpExampleRpc("getcollateral", ""));
 
-    const CAmount collAmt = Params().GetConsensus().nMNCollateralAmt;
+    const CAmount collAmt = Params().GetConsensus().nPNCollateralAmt;
     return collAmt / COIN;
 }
 
