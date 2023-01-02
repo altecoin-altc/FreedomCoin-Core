@@ -1092,6 +1092,23 @@ UniValue relaypatriotnodebroadcast(const JSONRPCRequest& request)
     return strprintf("Patriotnode broadcast sent (service %s, vin %s)", mnb.addr.ToString(), mnb.vin.ToString());
 }
 
+UniValue getcollateral(const JSONRPCRequest& request)
+{
+    if (request.fHelp || request.params.size() != 0)
+        throw std::runtime_error(
+            "getcollateral\n"
+            "\nPrint the amount of coins currently required as a masternode collateral\n"
+
+            "\nResult:\n"
+            "\"status\"     (numeric) Masternode collateral value right now\n"
+
+            "\nExamples:\n" +
+            HelpExampleCli("getcollateral", "") + HelpExampleRpc("getcollateral", ""));
+
+    const CAmount collAmt = Params().GetConsensus().nMNCollateralAmt;
+    return collAmt / COIN;
+}
+
 static const CRPCCommand commands[] =
 { //  category              name                         actor (function)            okSafe argNames
   //  --------------------- ---------------------------  --------------------------  ------ --------
@@ -1109,6 +1126,7 @@ static const CRPCCommand commands[] =
     { "patriotnode",         "patriotnodecurrent",         &patriotnodecurrent,         true,  {} },
     { "patriotnode",         "relaypatriotnodebroadcast",  &relaypatriotnodebroadcast,  true,  {"hexstring"}  },
     { "patriotnode",         "startpatriotnode",           &startpatriotnode,           true,  {"set","lockwallet","alias","reload_conf"} },
+    { "patriotnode",         "getcollateral",              &getcollateral,              true,  {} },
 
     /* Not shown in help */
     { "hidden",             "getcachedblockhashes",      &getcachedblockhashes,      true,  {} },
